@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Trips</title>
+    <link rel="icon" href="img/destimate_logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ae7ab48eb0.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        header{
+            position: sticky;
+        }
+
+       
+
+        /* Kenar Çubuğu Stili */
+        .sidebar {
+            position: fixed;
+            height: 100%;
+            width: 240px;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+
+        /* Ana İçerik Bölümü Stili */
+        .main-content {
+            margin-left: 240px; /* Kenar çubuğu genişliği kadar sola kaydır */
+            padding: 20px;
+        }
+		 .card-img-top {
+        object-fit: cover; /* Resmi kartın içine sığdır */
+        height: 300px; /* Kartın yüksekliğini ayarla */
+    }
+	footer {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .dropdown{
+            margin-left: 10px;
+        }
+
+       
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <!-- Site Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="img/destimate_logo.png" alt="Site Logo" width="70" height="70" class="d-inline-block align-top">
+            Trip Packages
+        </a>
+
+        <!-- Navbar Toggler (Küçük Ekranlar İçin) -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Bağlantıları ve Arama Kutusu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            
+
+            <!-- Arama Kutusu -->
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+			
+			<ul class="navbar-nav ml-auto">
+               <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Basket</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Sign In</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Sign Up</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="img/user_photo.png" alt="Profile Picture" width="30" height="30" class="rounded-circle">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="profileDropdown">
+              <a class="dropdown-item" href="profile.html">Profile <i class="fa-solid fa-user"></i></a>
+              <a class="dropdown-item" href="settings.html">Settings  <i class="fa-solid fa-gear"></i></a>
+              <a class="dropdown-item" href="#">Log Out <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>
+          </div>
+    </div>
+</nav>
+   
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Kenar Çubuğu -->
+        <nav class="col-md-3 d-none d-md-block sidebar">
+            <div class="accordion" id="sidebar">
+                <div class="card">
+                    <div class="card-header" id="sidebarHeading">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#sidebarContent" aria-expanded="true" aria-controls="sidebarContent">
+                                Menu
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="sidebarContent" class="collapse show" aria-labelledby="sidebarHeading" data-parent="#sidebar">
+                        <div class="card-body">
+                            <!-- Kenar Çubuğu İçeriği -->
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link active" href="index.html">Home Page</a></li>
+                                <li class="nav-item"><a class="nav-link" href="profile.html">Manage Account</a></li>
+                                <li class="nav-item"><a class="nav-link" href="trips.html">Trips</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Saved</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Frequently Asked</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Ana İçerik Bölümü -->
+        <main class="col-md-9 main-content">
+            <!-- İçerik Değişecek -->
+            <h2>Welcome </h2>
+            <p>Our Available Packages</p>
+
+            <!-- Örnek Kartlar -->
+            <div class="row">
+                <!-- Kart 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://italyadaegitim.com/wp-content/uploads/2020/11/kolezyum-roma-1-1-780x470.jpg" class="card-img-top" alt="Ürün 1 Resmi">
+                        <div class="card-body">
+                            <h5 class="card-title">Italy Rome</h5>
+                            <p class="card-text">Price: $50.00</p>
+                            <p class="card-text">Nights: 3</p>
+                            <p class="card-text">Days: 4</p>
+                            <p class="card-text">During this 6-day vacation, explore the unique historical sites of Rome and savor the delicious Italian cuisine.</p>
+                            <button type="button" class="btn btn-success" onclick="addToCart('italy-rome', 'Italy Rome', 50.00, 3, 4)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kart 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://cdnp.flypgs.com/files/Sehirler-long-tail/Madrid/madrid_sehir_rehberi2.jpg" class="card-img-top" alt="Ürün 2 Resmi">
+                        <div class="card-body">
+                            <h5 class="card-title">Spain Madrid</h5>
+                            <p class="card-text">Price: $75.00</p>
+                            <p class="card-text">Nights: 5</p>
+                            <p class="card-text">Days: 6</p>
+                            <p class="card-text">Feel the vibrant atmosphere of Madrid and explore the unique beauty of Spain's capital city during this 5-day vacation, filled with art, culture, and gastronomic delights. </p>
+                            <button type="button" class="btn btn-success" onclick="addToCart('spain-madrid', 'Spain Madrid', 75.00, 5, 6)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="row">
+    <!-- Yeni Kart 1 -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1283504873/tr/foto%C4%9Fraf/cami-ve-bo%C4%9Faz-k%C3%B6pr%C3%BCs%C3%BC.jpg?s=2048x2048&w=is&k=20&c=mxrrt8AraR4iaU7AY41xYe4MKIVw_cI4VHSZhy5x4Eg=" class="card-img-top" alt="Ürün 3 Resmi">
+            <div class="card-body">
+                <h5 class="card-title">Türkiye Istanbul</h5>
+                <p class="card-text">Price: $90.00</p>
+                <p class="card-text">Nights: 7</p>
+                <p class="card-text">Days: 8</p>
+                <p class="card-text">Step into your dream Istanbul vacation for just $110.00.</p>
+                <button type="button" class="btn btn-success" onclick="addToCart('türkiye-istanbul', 'Türkiye İstanbul', 90.00, 7, 8)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yeni Kart 2 -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1347665170/tr/foto%C4%9Fraf/london-at-sunset.jpg?s=2048x2048&w=is&k=20&c=vRHoj_kQqzL9wfVBXeKEheADMI0cTA0mVqltYA419Zk=" class="card-img-top" alt="Ürün 4 Resmi">
+            <div class="card-body">
+                <h5 class="card-title">England London</h5>
+                <p class="card-text">Price: $120.00</p>
+                <p class="card-text">Nights: 4</p>
+                <p class="card-text">Days: 5</p>
+                <p class="card-text">Discover the enchanting charm of England's capital with our unforgettable London travel package.</p>
+                <button type="button" class="btn btn-success" onclick="addToCart('england-london', 'England London', 120.00, 4, 5)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+     
+    <script>
+        // Initialize a cart array to store selected trips
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        // Function to add a trip to the cart
+        function addToCart(tripId, tripName, price, nights, days) {
+            const trip = {
+                id: tripId,
+                name: tripName,
+                price: price,
+                nights: nights,
+                days: days
+            };
+    
+            // Add the trip to the cart
+            cart.push(trip);
+    
+            // Store the updated cart in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            // Optionally, you can update the UI to reflect the addition to the cart
+            alert(`Added ${trip.name} to the cart!`);
+        }
+    </script>
+    
+        // Add more event listeners for additional buttons as needed
+    </script>
+
+
+
+
+   
+        </main>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+        &copy; 2023 Destimate. Tüm hakları saklıdır.
+    </footer>
+
+<!-- Bootstrap JS ve Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
